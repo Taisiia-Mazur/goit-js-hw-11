@@ -16,6 +16,7 @@ function getPictureByValue(evt) {
   const inputValue = form.elements.insert.value.toLowerCase().trim();
 
   if (inputValue === '') {
+    loading.style.display = 'none';
     return errorParams();
   }
   loading.style.display = 'flex';
@@ -72,6 +73,7 @@ function inputPictures({ hits }) {
   gallery.innerHTML = hitsList;
 
   if (hits.length === 0) {
+    loading.style.display = 'none';
     return errorParams();
   }
   lightbox.refresh();
